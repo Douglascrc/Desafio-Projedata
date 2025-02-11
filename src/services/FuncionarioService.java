@@ -65,6 +65,9 @@ public class FuncionarioService {
                 maisVelho = f;
             }
         }
+        if(maisVelho != null ) {
+            System.out.println("O funcionário mais velho é " + maisVelho.getNome() + " - " +Formatador.formatarData(maisVelho.getDataNascimento()) + " - " + Formatador.formatarMoeda(maisVelho.getSalario())  + " - " + maisVelho.getFuncao()) ;
+        }
         return maisVelho;
     }
     public void listarOrdenadoPorNome() {

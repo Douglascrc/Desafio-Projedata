@@ -1,12 +1,8 @@
 import models.Funcionario;
 import services.FuncionarioService;
-import utils.Formatador;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+
 
 public class ApplicationIniflex {
 
@@ -29,12 +25,36 @@ public class ApplicationIniflex {
         // Remove João
         service.removerFuncionario("João");
 
+        System.out.println("Imprime a lista de funcionáios sem o João");
         service.listarFuncionarios();
+        System.out.println("------------------------------------\n");
+
+        System.out.println("Aumenta o salário em 10%");
         service.aumentarSalario(10);
+        service.listarFuncionarios();
+        System.out.println("------------------------------------\n");
+
+        // Funcionários são agrupados
         service.agruparPorFuncao();
+        service.listarFuncionarios();
+
+        // Lista os aniversariantes de outubro e dezembro
+        System.out.println("Lista os aniversariantes");
         service.listarAniversariantes(10, 12);
+        System.out.println("------------------------------------\n");
+
+        // Agora mostrando o mais velho
+        System.out.println("Lista o mais velho");
         service.obterFuncionarioMaisVelho();
+        System.out.println("------------------------------------\n");
+
+        // Ordem alfabética
+        System.out.println("Imprimindo em ordem alfabética");
         service.listarOrdenadoPorNome();
+        System.out.println("------------------------------------\n");
+
+
+        System.out.println("Lista quantidade de salários mínimos");
         service.calcularTotalSalarios();
         service.calcularSalariosMinimos(BigDecimal.valueOf(1212.00));
     }
